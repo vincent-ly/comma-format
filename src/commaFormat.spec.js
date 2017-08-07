@@ -19,11 +19,11 @@ describe('Numeric comma function ', () => {
   })
 
   it('should return the same input if the number contains less than 4 digits', () => {
-    expect(commaFormat(100)).to.equal('100')
+    expect(commaFormat(1)).to.equal('1')
   })
 
   it('should throw an error if input is not a number', () => {
-    expect(() => commaFormat('asdf')).to.throw()
+    expect(() => commaFormat('asdf')).to.throw(TypeError)
   })
 
   it('should fix the number to two decimal places if a fixed paramter is not specified', () => {

@@ -33,5 +33,9 @@ describe('Numeric comma function ', () => {
   it('should fix the number to the specific decimal places', () => {
     expect(commaFormat(5030.4934343, 3)).to.equal('5,030.493')
   })
+
+  it('should return a negative numeric string with commas', () => {
+    expect(commaFormat(-2133302)).to.equal('-2,133,302')
+  })
 })
 

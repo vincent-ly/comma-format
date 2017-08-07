@@ -1,4 +1,8 @@
 function commaFormat (input, fixedTo = 2) {
+  if (!(isFinite(input) && +input === input)) {
+    throw new TypeError(`${input} is not a number`)
+  }
+
   const number = Math.abs(input).toFixed(fixedTo).split('.')
   const integer = number[0]
   const decimal = input % 1 !== 0 ? `.${number[1]}` : ''

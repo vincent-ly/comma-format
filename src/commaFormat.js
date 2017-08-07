@@ -1,7 +1,8 @@
 function commaFormat (input, fixedTo = 2) {
-  const number = input.toFixed(fixedTo).split('.')
+  const number = Math.abs(input).toFixed(fixedTo).split('.')
   const integer = number[0]
   const decimal = input % 1 !== 0 ? `.${number[1]}` : ''
+  const sign = input < 0 ? '-' : ''
 
   let counter = 0
   let temp = ''
@@ -16,7 +17,7 @@ function commaFormat (input, fixedTo = 2) {
     }
   }
 
-  return temp + decimal
+  return sign + temp + decimal
 }
 
 export default commaFormat
